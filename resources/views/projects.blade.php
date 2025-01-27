@@ -13,6 +13,24 @@
         </div>
     </div>
 
+    <!-- Category Filter -->
+    <div class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center py-4 space-x-4">
+                <a href="{{ route('projects') }}"
+                    class="px-4 py-2 rounded-md {{ !request('category') ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200' }}">
+                    All Projects
+                </a>
+                @foreach($categories as $category)
+                <a href="{{ route('projects', ['category' => $category]) }}"
+                    class="px-4 py-2 rounded-md {{ request('category') === $category ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200' }}">
+                    {{ $category }}
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
     <!-- Projects Grid -->
     <div class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +38,10 @@
                 @foreach($projects as $project)
                 <div class="group relative bg-white rounded-lg shadow-sm overflow-hidden">
                     <div class="relative h-48 w-full overflow-hidden">
-                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-200 ease-in-out" src="{{ $project->image }}" alt="{{ $project->name }}">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                            src="{{ $project->image }}"
+                            alt="{{ $project->name }}"
+                            loading="lazy">
                         @if($project->category)
                         <div class="absolute top-0 right-0 mt-4 mr-4">
                             <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
@@ -54,16 +75,22 @@
                             </div>
                         </div>
                         @endif
-                        @if($project->link)
                         <div class="mt-6">
-                            <a href="{{ $project->link }}" class="text-sm font-medium text-primary-600 hover:text-primary-500">
-                                View Project <span aria-hidden="true">&rarr;</span>
+                            <a href="{{ route('projects.show', $project->id) }}" class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md shadow-sm">
+                                View Project Details
+                                <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
                             </a>
                         </div>
-                        @endif
                     </div>
                 </div>
                 @endforeach
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12">
+                {{ $projects->links() }}
             </div>
         </div>
     </div>

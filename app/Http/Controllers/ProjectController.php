@@ -10,13 +10,25 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::orderBy('created_at', 'desc')
-            ->paginate(9);
+        $query = Project::query();
+
+        if ($request->has('category')) {
+            $query->where('category', $request->category);
+        }
+
+        $projects = $query->orderBy('created_at', 'desc')
+            ->paginate(9)
+            ->withQueryString();
+
+        $categories = Project::distinct()
+            ->whereNotNull('category')
+            ->pluck('category');
 
         return view('projects', [
-            'projects' => $projects
+            'projects' => $projects,
+            'categories' => $categories
         ]);
     }
 
@@ -41,7 +53,8 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('projects.show', compact('project'));
     }
 
     /**

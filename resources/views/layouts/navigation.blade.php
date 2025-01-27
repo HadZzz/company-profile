@@ -1,4 +1,7 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow-sm">
+<nav x-data="{ open: false, scrolled: false }"
+    @scroll.window="scrolled = (window.pageYOffset > 20)"
+    :class="{ 'bg-white shadow-md': scrolled, 'bg-transparent': !scrolled }"
+    class="fixed w-full top-0 z-50 transition-all duration-300">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -29,6 +32,9 @@
                     </a>
                     <a href="{{ route('contact') }}" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 {{ request()->routeIs('contact') ? 'text-primary-600 border-b-2 border-primary-500' : 'text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
                         Contact
+                    </a>
+                    <a href="{{ route('faq') }}" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 {{ request()->routeIs('faq') ? 'text-primary-600 border-b-2 border-primary-500' : 'text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
+                        FAQ
                     </a>
                 </div>
             </div>
@@ -73,6 +79,9 @@
             <a href="{{ route('contact') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('contact') ? 'border-primary-500 text-primary-600 bg-primary-50' : 'border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300' }} text-base font-medium focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">
                 Contact
             </a>
+            <a href="{{ route('faq') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('faq') ? 'border-primary-500 text-primary-600 bg-primary-50' : 'border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300' }} text-base font-medium focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">
+                FAQ
+            </a>
         </div>
 
         <!-- Responsive Contact Button -->
@@ -85,3 +94,5 @@
         </div>
     </div>
 </nav>
+<!-- Spacer for fixed header -->
+<div class="h-16"></div>

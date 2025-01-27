@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
                 'client' => 'RetailCo Inc.',
                 'completion_date' => '2024-12-15',
                 'technologies' => 'Laravel, Vue.js, MySQL, Redis',
-                'link' => 'https://example.com/ecommerce',
+                'link' => null,
                 'is_featured' => true
             ],
             [
@@ -32,7 +32,7 @@ class ProjectSeeder extends Seeder
                 'client' => 'HealthCare Plus',
                 'completion_date' => '2024-11-30',
                 'technologies' => 'Laravel, React, PostgreSQL, Docker',
-                'link' => 'https://example.com/healthcare',
+                'link' => null,
                 'is_featured' => true
             ],
             [
@@ -43,7 +43,7 @@ class ProjectSeeder extends Seeder
                 'client' => 'FinBank',
                 'completion_date' => '2024-10-20',
                 'technologies' => 'React Native, Node.js, MongoDB',
-                'link' => 'https://example.com/banking',
+                'link' => null,
                 'is_featured' => true
             ],
             [
@@ -54,7 +54,7 @@ class ProjectSeeder extends Seeder
                 'client' => 'PropTech Solutions',
                 'completion_date' => '2024-09-15',
                 'technologies' => 'Laravel, Alpine.js, MySQL',
-                'link' => 'https://example.com/realestate',
+                'link' => null,
                 'is_featured' => false
             ],
         ];

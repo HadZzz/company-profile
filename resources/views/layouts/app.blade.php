@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))" :class="{ 'dark': darkMode }">
 
 <head>
     <meta charset="utf-8">
@@ -65,10 +65,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="font-sans antialiased bg-gray-50">
+<body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">
     <div class="min-h-screen">
         @include('layouts.navigation')
 

@@ -1,44 +1,44 @@
 <x-app-layout>
     <!-- Hero Section -->
-    <div class="bg-primary-700 py-16">
+    <div class="bg-primary-700 dark:bg-primary-800 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-                    Frequently Asked Questions
+                <h1 class="text-4xl font-extrabold text-white dark:text-gray-100 sm:text-5xl md:text-6xl">
+                    Pertanyaan yang Sering Diajukan
                 </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-primary-200 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Find answers to common questions about our services and processes.
+                <p class="mt-3 max-w-md mx-auto text-base text-primary-200 dark:text-primary-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Temukan jawaban untuk pertanyaan umum tentang layanan dan proses kami.
                 </p>
             </div>
         </div>
     </div>
 
     <!-- FAQ Section -->
-    <div class="bg-white py-16">
+    <div class="bg-white dark:bg-gray-900 py-16">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="space-y-8">
                 <!-- Services -->
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Services</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Layanan Kami</h2>
                     <div class="space-y-6">
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                             <button class="w-full text-left px-6 py-4 focus:outline-none">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-medium text-gray-900">What services do you offer?</h3>
+                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Apa saja layanan yang Anda tawarkan?</h3>
                                 </div>
-                                <div class="mt-2 text-gray-600">
-                                    We offer a comprehensive range of digital services including web development, mobile app development, UI/UX design, cloud solutions, digital marketing, and IT consulting. Each service is customized to meet your specific business needs.
+                                <div class="mt-2 text-gray-600 dark:text-gray-400">
+                                    Kami menawarkan berbagai layanan digital termasuk pengembangan web, pengembangan aplikasi mobile, desain UI/UX, solusi cloud, pemasaran digital, dan konsultasi IT. Setiap layanan disesuaikan dengan kebutuhan bisnis Anda.
                                 </div>
                             </button>
                         </div>
 
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                             <button class="w-full text-left px-6 py-4 focus:outline-none">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-medium text-gray-900">How do you ensure project quality?</h3>
+                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Bagaimana Anda memastikan kualitas proyek?</h3>
                                 </div>
-                                <div class="mt-2 text-gray-600">
-                                    We follow industry best practices and have a rigorous quality assurance process. This includes code reviews, automated testing, and multiple rounds of QA before delivery. We also maintain constant communication with clients to ensure their requirements are met.
+                                <div class="mt-2 text-gray-600 dark:text-gray-400">
+                                    Kami mengikuti praktik terbaik industri dan memiliki proses jaminan kualitas yang ketat. Ini termasuk review kode, pengujian otomatis, dan beberapa tahap pengujian sebelum rilis.
                                 </div>
                             </button>
                         </div>
@@ -47,33 +47,15 @@
 
                 <!-- Process -->
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Process</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Proses Kerja</h2>
                     <div class="space-y-6">
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                             <button class="w-full text-left px-6 py-4 focus:outline-none">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-medium text-gray-900">What is your development process?</h3>
+                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Bagaimana proses pengembangan proyek?</h3>
                                 </div>
-                                <div class="mt-2 text-gray-600">
-                                    Our development process follows an agile methodology with these key phases:
-                                    <ul class="mt-2 list-disc list-inside">
-                                        <li>Discovery and Planning</li>
-                                        <li>Design and Prototyping</li>
-                                        <li>Development and Testing</li>
-                                        <li>Deployment and Launch</li>
-                                        <li>Maintenance and Support</li>
-                                    </ul>
-                                </div>
-                            </button>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-                            <button class="w-full text-left px-6 py-4 focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-medium text-gray-900">How long does a typical project take?</h3>
-                                </div>
-                                <div class="mt-2 text-gray-600">
-                                    Project timelines vary depending on scope and complexity. A simple website might take 4-6 weeks, while a complex enterprise application could take 3-6 months or more. We'll provide a detailed timeline during the project planning phase.
+                                <div class="mt-2 text-gray-600 dark:text-gray-400">
+                                    Proses kami dimulai dengan konsultasi mendalam untuk memahami kebutuhan Anda. Kemudian kami membuat rencana proyek, desain, pengembangan, pengujian, dan akhirnya peluncuran. Kami menerapkan metodologi agile untuk memastikan fleksibilitas dan komunikasi yang baik.
                                 </div>
                             </button>
                         </div>
@@ -82,33 +64,15 @@
 
                 <!-- Support -->
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Support & Maintenance</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Dukungan & Pemeliharaan</h2>
                     <div class="space-y-6">
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                             <button class="w-full text-left px-6 py-4 focus:outline-none">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-medium text-gray-900">What kind of support do you provide?</h3>
+                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Bagaimana dengan dukungan setelah proyek selesai?</h3>
                                 </div>
-                                <div class="mt-2 text-gray-600">
-                                    We offer comprehensive support including:
-                                    <ul class="mt-2 list-disc list-inside">
-                                        <li>24/7 technical support</li>
-                                        <li>Regular maintenance and updates</li>
-                                        <li>Performance monitoring</li>
-                                        <li>Security patches</li>
-                                        <li>Feature enhancements</li>
-                                    </ul>
-                                </div>
-                            </button>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-                            <button class="w-full text-left px-6 py-4 focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-medium text-gray-900">Do you offer ongoing maintenance?</h3>
-                                </div>
-                                <div class="mt-2 text-gray-600">
-                                    Yes, we offer flexible maintenance packages to keep your application up-to-date and running smoothly. This includes regular updates, security patches, and performance optimization.
+                                <div class="mt-2 text-gray-600 dark:text-gray-400">
+                                    Kami menyediakan dukungan teknis berkelanjutan dan pemeliharaan untuk memastikan proyek Anda tetap berjalan optimal. Paket dukungan kami mencakup pemantauan, pembaruan keamanan, dan perbaikan bug.
                                 </div>
                             </button>
                         </div>
@@ -119,23 +83,18 @@
     </div>
 
     <!-- CTA Section -->
-    <div class="bg-primary-700">
+    <div class="bg-primary-700 dark:bg-primary-800">
         <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">Still have questions?</span>
-                <span class="block">We're here to help.</span>
+            <h2 class="text-3xl font-extrabold text-white dark:text-gray-100 sm:text-4xl">
+                <span class="block">Masih punya pertanyaan?</span>
+                <span class="block">Hubungi kami langsung.</span>
             </h2>
-            <p class="mt-4 text-lg leading-6 text-primary-200">
-                Contact us for detailed information about our services and how we can help your business grow.
+            <p class="mt-4 text-lg leading-6 text-primary-200 dark:text-primary-300">
+                Tim kami siap membantu menjawab semua pertanyaan Anda.
             </p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50">
-                    Contact Us
-                </a>
-                <a href="{{ route('about') }}" class="inline-flex items-center justify-center px-5 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-primary-600">
-                    Learn More
-                </a>
-            </div>
+            <a href="{{ route('contact') }}" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 dark:text-primary-400 bg-white dark:bg-gray-800 hover:bg-primary-50 dark:hover:bg-gray-700 sm:w-auto">
+                Hubungi Kami
+            </a>
         </div>
     </div>
 </x-app-layout>

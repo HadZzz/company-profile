@@ -35,8 +35,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy project files
 COPY . .
 
-# Create .env file from example
-RUN cp .env.example .env
+# Ensure .env.example exists before copying
+RUN if [ -f .env.example ]; then cp .env.example .env; else echo ".env.example not found"; exit 1; fi
 
 # Install project dependencies
 RUN composer install --optimize-autoloader --no-dev

@@ -61,6 +61,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
+    <!-- Vite -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Scripts -->
     <script src="https://unpkg.com/alpinejs" defer></script>

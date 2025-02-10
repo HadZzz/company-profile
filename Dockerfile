@@ -17,6 +17,8 @@ RUN composer install
 
 RUN sed -i 's/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/' .env
 
+RUN touch /app/database/database.sqlite
+
 # Run Vite build
 RUN yarn && yarn run build
 

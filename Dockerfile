@@ -35,9 +35,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy project files
 COPY . .
 
-# Create .env file from example
-RUN cp company-profile/.env.example company-profile/.env
-
 # Install project dependencies
 RUN composer install --optimize-autoloader --no-dev
 

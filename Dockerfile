@@ -35,14 +35,17 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy project files
 COPY . .
 
+# Create .env file from example
+RUN cp .env.example .env
+
 # Install project dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# Generate application key
-RUN php artisan key:generate
-
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Generate application key
+RUN php artisan key:generate --force
 
 # Copy nginx configuration
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf

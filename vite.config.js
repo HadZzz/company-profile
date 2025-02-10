@@ -14,7 +14,8 @@ export default defineConfig({
     server: {
         hmr: {
             host: 'localhost',
+            protocol: 'https', // Ensure that HMR uses HTTPS
         },
-        https: true, // Ensure that Vite serves assets over HTTPS
     },
+    base: '/build/', // Ensure that the base path for assets is set correctly
 });

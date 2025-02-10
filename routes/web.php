@@ -22,13 +22,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+// Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+// Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/careers', [CareerController::class, 'index'])->name('careers');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

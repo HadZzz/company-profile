@@ -1,215 +1,205 @@
 # Modern Company Profile Website
 
-A professional company profile website built with Laravel and TailwindCSS, featuring a modern design and comprehensive functionality.
+Aplikasi company profile modern yang dibangun dengan Laravel dan TailwindCSS.
 
-![Website Preview](public/images/preview.png)
+## Perubahan Terbaru
 
-## Features
+- Penambahan fitur "Featured Projects" di halaman utama
+- Penambahan kolom `is_featured` pada tabel projects
+- Penonaktifan sementara fitur blog
+- Perbaikan tampilan team section dengan grid layout (4 kolom)
+- Optimasi gambar dengan fallback ke UI Avatars (https://ui-avatars.com)
+- Penambahan social media links untuk team members
+- Perbaikan responsive design untuk mobile dan tablet
+- Optimasi performa loading
 
-### 🎯 Core Features
+## Teknologi yang Digunakan
 
--   Modern and responsive design
--   Dynamic content management
--   SEO optimized with meta tags and Schema.org markup
--   Fast loading with lazy loading images
--   Smooth animations and transitions
+- Laravel 10.x
+- TailwindCSS 3.x
+- Alpine.js
+- MySQL/PostgreSQL
+- PHP 8.1+
 
-### 📱 User Interface
+## Struktur File untuk Kustomisasi
 
--   Sticky navigation with scroll effects
--   Animated statistics counters
--   Technology showcase with hover effects
--   Client logo showcase with grayscale effects
--   Responsive testimonials grid
--   Mobile-friendly design
+Berikut lokasi file-file utama yang sering diubah:
 
-### 🛠 Technical Features
+1. **Halaman Utama**
+   - `resources/views/home.blade.php` - Layout dan konten homepage
+   - `app/Http/Controllers/HomeController.php` - Logic featured projects
 
--   Built with Laravel 11
--   TailwindCSS for styling
--   Alpine.js for interactive components
--   AOS (Animate On Scroll) integration
--   Schema.org markup for SEO
--   Optimized meta tags
--   Lazy loading images
--   Intersection Observer API usage
+2. **Halaman About & Team**
+   - `resources/views/about.blade.php` - Layout dan konten about
+   - `resources/views/components/team-member.blade.php` - Card component team
 
-### 📑 Content Sections
+3. **Layout & Navigation**
+   - `resources/views/layouts/navigation.blade.php` - Menu utama
+   - `resources/views/layouts/footer.blade.php` - Footer
+   - `resources/views/layouts/app.blade.php` - Layout wrapper
 
--   Dynamic Services showcase
--   Project portfolio with filtering
--   Team member profiles
--   Client testimonials
--   Technology stack display
--   FAQ section
--   Blog functionality
--   Contact form
+4. **Database & Model**
+   - `database/migrations/*_create_projects_table.php` - Struktur tabel projects
+   - `database/migrations/*_create_team_members_table.php` - Struktur tabel team
+   - `app/Models/Project.php` - Model untuk projects
+   - `app/Models/TeamMember.php` - Model untuk team members
 
-## Requirements
+5. **Assets & Images**
+   - `public/images/` - Gambar statis
+   - `storage/app/public/` - Upload gambar (perlu storage:link)
+   - `resources/css/app.css` - Custom CSS
+   - `tailwind.config.js` - Konfigurasi theme
 
--   PHP >= 8.2
--   Composer
--   Node.js & NPM
--   MySQL or PostgreSQL
--   Git
+## Struktur File Penting
 
-## Installation
+```
+company-profile/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/          # Controller untuk setiap fitur
+│   │   │   ├── HomeController.php
+│   │   │   ├── AboutController.php
+│   │   │   └── ...
+│   │   └── Middleware/          # Middleware aplikasi
+│   └── Models/                  # Model database
+├── database/
+│   ├── migrations/             # File migrasi database
+│   └── seeders/               # Data seeder untuk testing
+├── resources/
+│   ├── views/
+│   │   ├── layouts/           # Layout template
+│   │   │   ├── app.blade.php
+│   │   │   ├── navigation.blade.php
+│   │   │   └── footer.blade.php
+│   │   ├── about.blade.php    # Halaman About
+│   │   ├── home.blade.php     # Halaman Home
+│   │   └── ...               # View lainnya
+│   ├── css/                  # File CSS
+│   └── js/                   # File JavaScript
+├── routes/
+│   └── web.php              # Definisi route web
+└── public/                  # Asset publik
+    └── images/             # Gambar website
+```
 
-1. Clone the repository
+## Cara Instalasi
 
+1. Clone repository
 ```bash
-git clone https://github.com/yourusername/company-profile.git
+git clone <repository-url>
 cd company-profile
 ```
 
-2. Install PHP dependencies
-
+2. Install dependencies
 ```bash
 composer install
-```
-
-3. Install NPM dependencies
-
-```bash
 npm install
 ```
 
-4. Create environment file
-
+3. Setup environment
 ```bash
 cp .env.example .env
-```
-
-5. Generate application key
-
-```bash
 php artisan key:generate
 ```
 
-6. Configure your database in .env file
-
-```env
+4. Konfigurasi database di file `.env`
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=your_database
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+DB_DATABASE=company_profile
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
-7. Run database migrations and seeders
-
+5. Migrasi dan seed database
 ```bash
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
-8. Build assets
-
+6. Buat link storage
 ```bash
-npm run build
+php artisan storage:link
 ```
 
-9. Start the development server
+7. Compile asset
+```bash
+npm run dev
+```
 
+8. Jalankan aplikasi
 ```bash
 php artisan serve
 ```
 
-Visit `http://localhost:8000` in your browser.
+## Panduan Kustomisasi
 
-## Configuration
+### Mengubah Konten
 
-### Environment Variables
+1. **Teks dan Konten Statis**
+   - Edit file di `resources/views/` sesuai halaman yang ingin diubah
+   - Contoh: untuk mengubah halaman about, edit `resources/views/about.blade.php`
 
--   `APP_NAME`: Your company name
--   `APP_URL`: Your website URL
--   `MAIL_*`: Mail configuration for contact form
--   `DB_*`: Database configuration
+2. **Menu Navigasi**
+   - Edit file `resources/views/layouts/navigation.blade.php`
 
-### Custom Configuration
+3. **Footer**
+   - Edit file `resources/views/layouts/footer.blade.php`
 
--   Update company information in `config/company.php`
--   Modify SEO meta tags in views
--   Customize color scheme in `tailwind.config.js`
+### Mengubah Tampilan
 
-## Customization
+1. **Warna dan Tema**
+   - Edit file `tailwind.config.js` untuk kustomisasi warna
+   - Tema utama menggunakan variabel `primary` dan `secondary`
 
-### Styling
+2. **Layout**
+   - Layout utama ada di `resources/views/layouts/app.blade.php`
+   - Setiap section menggunakan class TailwindCSS untuk styling
 
--   Primary colors can be modified in `tailwind.config.js`
--   Component styles are in `resources/css/app.css`
--   Individual component styling in respective blade files
+3. **CSS Kustom**
+   - Tambahkan CSS kustom di `resources/css/app.css`
 
-### Content
+### Mengelola Data
 
--   Update company info in seeders
--   Modify static content in blade templates
--   Add new sections by creating blade components
+1. **Team Members**
+   - Data team ada di `database/seeders/TeamMemberSeeder.php`
+   - Struktur tabel di `database/migrations/*_create_team_members_table.php`
 
-## Deployment
+2. **Projects**
+   - Data project ada di `database/seeders/ProjectSeeder.php`
+   - Untuk menambah project featured, set `is_featured = true`
 
-1. Set up your production environment
-2. Configure environment variables
-3. Install dependencies
+3. **Services**
+   - Data layanan ada di `database/seeders/ServiceSeeder.php`
 
-```bash
-composer install --optimize-autoloader --no-dev
-npm install
-npm run build
-```
+## Fitur
 
-4. Run migrations
+- ✅ Responsive Design
+- ✅ SEO Friendly
+- ✅ Dynamic Content Management
+- ✅ Featured Projects
+- ✅ Team Showcase
+- ✅ Service Showcase
+- ✅ Contact Form
+- ✅ Social Media Integration
+- ✅ Image Optimization
+- ❌ Blog (temporarily disabled)
 
-```bash
-php artisan migrate --force
-```
+## Troubleshooting
 
-5. Cache configuration
+1. **Gambar tidak muncul**
+   - Pastikan sudah menjalankan `php artisan storage:link`
+   - Cek permission folder `storage/app/public`
 
-```bash
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
-```
+2. **Error database**
+   - Pastikan konfigurasi database di `.env` sudah benar
+   - Jalankan `php artisan config:clear`
+   - Jalankan ulang migrasi dengan `php artisan migrate:fresh --seed`
 
-## Security
+## Kontribusi
 
--   CSRF protection enabled
--   XSS protection
--   SQL injection prevention
--   Secure headers configured
--   Input validation
--   File upload validation
+Silakan buat pull request untuk kontribusi. Untuk perubahan besar, buka issue terlebih dahulu.
 
-## Contributing
+## Lisensi
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Credits
-
--   [Laravel](https://laravel.com)
--   [TailwindCSS](https://tailwindcss.com)
--   [Alpine.js](https://alpinejs.dev)
--   [AOS](https://michalsnik.github.io/aos/)
-
-## Support
-
-For support, email support@yourcompany.com or create an issue in this repository.
-
-## Authors
-
--   Your Name - [GitHub Profile](https://github.com/yourusername)
-
-## Acknowledgments
-
--   Laravel Community
--   TailwindCSS Team
--   All contributors
+[MIT License](LICENSE.md)

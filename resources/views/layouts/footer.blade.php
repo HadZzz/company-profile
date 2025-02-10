@@ -50,9 +50,6 @@
                     <li>
                         <a href="{{ route('projects') }}" class="text-base text-gray-500 hover:text-gray-900">Projects</a>
                     </li>
-                    <li>
-                        <a href="{{ route('blog') }}" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
-                    </li>
                 </ul>
             </div>
 

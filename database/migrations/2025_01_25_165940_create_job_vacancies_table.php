@@ -15,16 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('description');
-            $table->text('requirements');
-            $table->string('location');
-            $table->string('employment_type'); // full-time, part-time, contract
-            $table->string('experience_level');
-            $table->decimal('salary_min', 12, 2)->nullable();
-            $table->decimal('salary_max', 12, 2)->nullable();
             $table->string('department');
-            $table->date('application_deadline')->nullable();
+            $table->string('location');
+            $table->string('type');
+            $table->text('description');
+            $table->json('requirements');
+            $table->string('salary_range');
             $table->boolean('is_active')->default(true);
+            $table->date('expires_at')->nullable();
             $table->timestamps();
         });
     }

@@ -15,33 +15,39 @@ class TestimonialSeeder extends Seeder
         $testimonials = [
             [
                 'name' => 'John Smith',
-                'position' => 'CEO',
-                'company' => 'Tech Innovations Inc.',
-                'content' => 'Working with this team has been an absolute pleasure. Their expertise in web development and attention to detail resulted in a product that exceeded our expectations.',
-                'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+                'position' => 'CEO, TechMart Solutions',
+                'company' => 'TechMart Solutions',
+                'content' => 'Working with this team was an absolute pleasure. They delivered our e-commerce platform ahead of schedule and the quality of their work exceeded our expectations. Their attention to detail and commitment to excellence is remarkable.',
                 'rating' => 5,
+                'image' => 'testimonials/john-smith.jpg',
                 'is_featured' => true,
-                'order' => 1
             ],
             [
                 'name' => 'Sarah Johnson',
-                'position' => 'Marketing Director',
-                'company' => 'Global Solutions Ltd.',
-                'content' => 'The mobile app they developed for us has significantly improved our customer engagement. Their innovative approach and technical expertise are truly impressive.',
-                'image' => 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+                'position' => 'CTO, MediCare Plus',
+                'company' => 'MediCare Plus',
+                'content' => 'The healthcare management system they developed has transformed our operations. Their understanding of our requirements and ability to deliver innovative solutions made them the perfect technology partner.',
                 'rating' => 5,
+                'image' => 'testimonials/sarah-johnson.jpg',
                 'is_featured' => true,
-                'order' => 2
             ],
             [
                 'name' => 'Michael Chen',
-                'position' => 'CTO',
-                'company' => 'Digital Dynamics',
-                'content' => 'Their cloud solutions have transformed our infrastructure, resulting in improved performance and significant cost savings. Highly recommended for enterprise-level projects.',
-                'image' => 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+                'position' => 'Founder, PropertyFinder Pro',
+                'company' => 'PropertyFinder Pro',
+                'content' => 'The mobile app they developed for our real estate business has received outstanding feedback from our users. Their technical expertise and proactive approach to problem-solving made the development process smooth and efficient.',
                 'rating' => 5,
+                'image' => 'testimonials/michael-chen.jpg',
                 'is_featured' => true,
-                'order' => 3
+            ],
+            [
+                'name' => 'Emily Brown',
+                'position' => 'Marketing Director, Digital First',
+                'company' => 'Digital First',
+                'content' => 'Their digital marketing strategies have significantly improved our online presence and lead generation. The team is highly professional, responsive, and always delivers results.',
+                'rating' => 5,
+                'image' => 'testimonials/emily-brown.jpg',
+                'is_featured' => true,
             ],
         ];
 

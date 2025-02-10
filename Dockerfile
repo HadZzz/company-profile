@@ -42,7 +42,7 @@ RUN composer install --optimize-autoloader --no-dev
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Generate application key
-RUN php artisan key:generate --force
+# RUN php artisan key:generate --force
 
 # Copy nginx configuration
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf

@@ -13,7 +13,7 @@ export default defineConfig({
     ],
     server: {
         hmr: {
-            host: 'localhost',
+            host: 'https://company-profile-production-69d6.up.railway.app/',
             protocol: 'https', // Ensure that HMR uses HTTPS
         },
     },
